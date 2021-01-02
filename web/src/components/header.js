@@ -4,14 +4,16 @@ import Icon from './icon'
 import {cn} from '../lib/helpers'
 import {FiInstagram} from 'react-icons/fi'
 
-import maasaiIcon from "../images/maasai_icon.png"
+import kwcLogo from "../images/kwc_logo.png"
 
 import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
-        <img src={maasaiIcon} height="20" style={{marginTop: "10px"}}/>
+        <div>
+          <img src={kwcLogo} height="64" />
+        </div>
       <div className={styles.branding}>
         <Link to='/'>{siteTitle}</Link>
       </div>
