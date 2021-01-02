@@ -2,6 +2,7 @@ import {Link} from 'gatsby'
 import React from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
+import {FiInstagram} from 'react-icons/Fi'
 
 import styles from './header.module.css'
 
@@ -20,6 +21,9 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
         <ul>
           <li>
             <Link to='/blog/2021/01/who-we-are/'>Who We Are</Link>
+          </li>
+          <li>
+          <div style={{color: "tomato"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><FiInstagram size={24}/></a></div>
           </li>
         </ul>
       </nav>
