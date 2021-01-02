@@ -11,16 +11,22 @@ export default {
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'string',
       title: 'Description',
       description: 'Describe your blog for search engines and social media.'
+    },
+    {
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'mainImage',
+      description: 'Hero Image for the Home Page'
     },
     {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
       description: 'Add keywords that describes your blog.',
-      of: [{type: 'string'}],
+      of: [{ type: 'string' }],
       options: {
         layout: 'tags'
       }
@@ -30,7 +36,7 @@ export default {
       type: 'reference',
       description: 'Publish an author and set a reference to them here.',
       title: 'Author',
-      to: [{type: 'author'}]
+      to: [{ type: 'author' }]
     }
   ]
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import {FiInstagram} from 'react-icons/Fi'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
@@ -11,10 +12,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
         <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a>{' '}
-          &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+          &copy; {new Date().getFullYear()}, Kenyan Women & Children <div style={{padding: "10px", color: "tomato"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><FiInstagram size={32}/></a></div>
         </div>
       </div>
     </footer>
