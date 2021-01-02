@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './header'
-import {FiInstagram} from 'react-icons/Fi'
+import {FiInstagram} from 'react-icons/fi'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
