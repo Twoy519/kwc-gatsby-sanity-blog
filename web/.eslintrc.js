@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'react/prop-types': 0,
     'comma-dangle': false,
+    'space-in-brackets': ['error', 'always'],
   },
   settings: {
     react: {

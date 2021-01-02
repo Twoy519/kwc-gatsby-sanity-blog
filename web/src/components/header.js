@@ -2,7 +2,7 @@ import {Link} from 'gatsby'
 import React from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
-import {FiInstagram} from 'react-icons/Fi'
+import {FiInstagram} from 'react-icons/fi'
 
 import maasaiIcon from "../images/maasai_icon.png"
 
