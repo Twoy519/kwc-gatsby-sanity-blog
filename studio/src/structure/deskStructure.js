@@ -3,7 +3,8 @@ import { MdSettings } from "react-icons/md";
 import {
   MdPerson,
   MdDescription,
-  MdLocalOffer
+  MdLocalOffer,
+  MdGroup
 } from "react-icons/md"
 import IframePreview from '../previews/IframePreview'
 
@@ -72,12 +73,17 @@ export default () =>
         .icon(MdLocalOffer)
         .schemaType('category')
         .child(S.documentTypeList('category').title('Categories')),
+      S.listItem()
+        .title('People')
+        .icon(MdGroup)
+        .schemaType('person')
+        .child(S.documentTypeList('person').title('People')),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
       ...S.documentTypeListItems().filter(
         listItem =>
-          !['category', 'author', 'post', 'siteSettings'].includes(
+          !['category', 'author', 'post', 'siteSettings', 'person'].includes(
             listItem.getId()
           )
       )

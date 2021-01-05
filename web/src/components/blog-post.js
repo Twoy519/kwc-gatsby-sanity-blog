@@ -20,7 +20,7 @@ function BlogPost (props) {
             <h1 className={styles.title}>{title}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
-          <aside className={styles.metaContent}>
+          {/* <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
@@ -39,7 +39,7 @@ function BlogPost (props) {
                 </ul>
               </div>
             )}
-          </aside>
+          </aside> */}
         </div>
       </Container>
     </article>
