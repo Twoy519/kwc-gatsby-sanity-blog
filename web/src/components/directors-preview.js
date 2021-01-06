@@ -12,7 +12,7 @@ function DirectorsPreview (props) {
         <div className={styles.personImage}>
           {props.image && props.image.asset && (
             <Img
-              fixed={props.image.asset.fixed}
+              fluid={props.image.asset.fluid}
               alt={props.name}
             />
           )}

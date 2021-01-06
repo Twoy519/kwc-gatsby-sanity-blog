@@ -20,8 +20,8 @@ export const query = graphql`
           hierarchyRank
           image {
             asset{
-              fixed(width: 300, height: 169) {
-                ...GatsbySanityImageFixed
+              fluid(maxWidth: 300, maxHeight: 169) {
+                ...GatsbySanityImageFluid
               }
             }
           }

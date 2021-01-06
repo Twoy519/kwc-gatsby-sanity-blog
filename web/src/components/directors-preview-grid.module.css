@@ -3,9 +3,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  gap: 10px;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 1rem;
+  justify-content: space-evenly;
 }
 
 .leadMediaThumb {
