@@ -8,7 +8,7 @@ function DirectorsPreview (props) {
   return (
     <>
       <div className={styles.text}>
-        <h1 className={styles.title}>{props.name.split(" ")[0]}</h1>
+        <h1 className={styles.title}>{props.name}</h1>
         <div className={styles.personImage}>
           {props.image && props.image.asset && (
             <Img
