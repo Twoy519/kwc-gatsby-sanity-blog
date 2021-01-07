@@ -13,7 +13,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
       <div className={styles.footerWrapper}>
         <div className={styles.siteInfo}>
           &copy; {new Date().getFullYear()}, Kenyan Women & Children <div className={styles.footerLogoWrapper}>
-            <div style={{padding: "10px", color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><AiFillInstagram size={32}/></a></div><div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren'><AiFillFacebook size={24}/></a></div>
+            <div style={{padding: "10px", color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/' target="_blank"><AiFillInstagram size={32}/></a></div><div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren' target="_blank"><AiFillFacebook size={24}/></a></div>
           </div>
         </div>
       </div>

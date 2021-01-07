@@ -28,10 +28,10 @@ const Header = ({onHideNav, onShowNav, showNav}) => (
             <Link to='/who-we-are' style={{ padding: "0", marginRight: "10px", fontSize: "24px"}} >Who We Are</Link>
           </li>
           <li>
-          <div style={{color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><AiFillInstagram size={24}/></a></div>
+          <div style={{color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/' target="_blank"><AiFillInstagram size={24}/></a></div>
           </li>
           <li>
-          <div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren'><AiFillFacebook size={24}/></a></div>
+          <div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren' target="_blank"><AiFillFacebook size={24}/></a></div>
           </li>
         </ul>
       </nav>
