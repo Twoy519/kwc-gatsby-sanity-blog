@@ -1,12 +1,19 @@
 import React from 'react'
 import Img from "gatsby-image"
+import {Link} from "gatsby"
 
-import styles from './directors-preview.module.css'
+import styles from './who-we-are-preview.module.css'
 import {responsiveTitle3} from './typography.module.css'
 
-function DirectorsPreview (props) {
+function WhoWeArePreview (props) {
   return (
-    <>
+    <Link
+    to={`/person/${props.slug.current}`}
+    style={{
+      textDecoration: 'none',
+      color: 'inherit',
+    }}
+    >
       <div className={styles.text}>
         <h1 className={styles.title}>{props.name}</h1>
         <div className={styles.personImage}>
@@ -19,8 +26,8 @@ function DirectorsPreview (props) {
         </div>
         <h6 className={responsiveTitle3}>{props.title}</h6>
       </div>
-    </>
+    </Link>
   )
 }
 
-export default DirectorsPreview
+export default WhoWeArePreview

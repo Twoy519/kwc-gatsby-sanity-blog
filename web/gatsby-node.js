@@ -1,4 +1,6 @@
 const {isFuture} = require('date-fns')
+const path = require('path')
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -7,8 +9,7 @@ const {isFuture} = require('date-fns')
 
 const {format} = require('date-fns')
 
-async function createBlogPostPages (graphql, actions) {
-  const {createPage} = actions
+async function createBlogPostPages ({graphql, actions}) {
   const result = await graphql(`
     {
       allSanityPost(
@@ -36,16 +37,54 @@ async function createBlogPostPages (graphql, actions) {
     .forEach((edge, index) => {
       const {id, slug = {}, publishedAt} = edge.node
       const dateSegment = format(publishedAt, 'YYYY/MM')
-      const path = `/blog/${dateSegment}/${slug.current}/`
+      const pagePath = `/blog/${dateSegment}/${slug.current}/`
 
-      createPage({
-        path,
-        component: require.resolve('./src/templates/blog-post.js'),
+      actions.createPage({
+        path: pagePath,
+        component: path.resolve('./src/templates/blog-post.js'),
         context: {id}
       })
     })
 }
 
-exports.createPages = async ({graphql, actions}) => {
-  await createBlogPostPages(graphql, actions)
+
+async function createPersonPages({ graphql, actions }) {
+  // 1. Fetch Template
+  const personTemplate = path.resolve('./src/templates/person.js');
+  // 2. Query all people
+  const { data } = await graphql(`
+    query {
+      people: allSanityPerson {
+        totalCount
+        nodes {
+          name
+          id
+          slug {
+            current
+          }
+        }
+      }
+      site: sanitySiteSettings {
+        title
+      }
+    }
+  `);
+  // 3. Loop over each person and create a page for that person
+  data.people.nodes.forEach((person) => {
+    actions.createPage({
+      // What is the URL for this new page??
+      path: `person/${person.slug.current}`,
+      component: personTemplate,
+      context: {
+        slug: person.slug.current,
+      },
+    });
+  });
+}
+
+exports.createPages = async (params) => {
+  await Promise.all([
+    createBlogPostPages(params),
+    createPersonPages(params),
+  ]);
 }

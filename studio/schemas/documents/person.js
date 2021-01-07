@@ -9,6 +9,15 @@ export default {
       title: 'Name'
     },
     {
+      name: 'slug',
+      title: 'URL Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 100,
+      },
+    },
+    {
       name: 'image',
       type: 'image',
       title: 'Image',
@@ -28,8 +37,8 @@ export default {
       description: 'This controls the hierarchy level this person will be displayed at on the People page. e.g. 1 will be placed higher than 2 etc.'
     },
     {
-      name: 'bio',
-      type: 'bioPortableText',
+      name: 'biography',
+      type: 'text',
       title: 'Biography'
     }
   ],

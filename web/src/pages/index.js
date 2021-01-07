@@ -136,7 +136,6 @@ const IndexPage = (props) => {
     );
   }
 
-  // todo: button for https://www.paypal.com/paypalme/kwandc
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />

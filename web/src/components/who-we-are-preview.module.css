@@ -27,6 +27,13 @@
 
 .text {
   /* empty */
+  &:hover {
+    color: #74787f;
+  }
+}
+
+.linkStyle {
+  text-decoration: none;
 }
 
 .title {

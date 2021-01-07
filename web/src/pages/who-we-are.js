@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import DirectorsPreviewGrid from '../components/directors-preview-grid'
+import WhoWeArePreviewGrid from '../components/who-we-are-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
@@ -9,7 +9,7 @@ import Layout from '../containers/layout'
 import {responsiveTitle1} from '../components/typography.module.css'
 
 export const query = graphql`
-  query DirectorsPageQuery {
+  query WhoWeArePageQuery {
     people: allSanityPerson(
       sort: { fields: [hierarchyRank], order: ASC }
       ) {
@@ -17,6 +17,9 @@ export const query = graphql`
           id
           name
           title
+          slug {
+            current
+          }
           hierarchyRank
           image {
             asset{
@@ -25,13 +28,12 @@ export const query = graphql`
               }
             }
           }
-          _rawBio
       }
     }
   }
 `
 
-const DirectorsPage = props => {
+const WhoWeArePage = props => {
   const {data, errors} = props
 
   if (errors) {
@@ -46,13 +48,13 @@ const DirectorsPage = props => {
 
   return (
     <Layout>
-      <SEO title='Directors' />
+      <SEO title='Who We Are' />
       <Container>
-        <h1 className={responsiveTitle1}>Directors</h1>
-        {people && people.length > 0 && <DirectorsPreviewGrid people={people} />}
+        <h1 className={responsiveTitle1}>Who We Are</h1>
+        {people && people.length > 0 && <WhoWeArePreviewGrid people={people} />}
       </Container>
     </Layout>
   )
 }
 
-export default DirectorsPage
+export default WhoWeArePage
