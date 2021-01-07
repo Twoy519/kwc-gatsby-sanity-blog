@@ -8,11 +8,11 @@ import {responsiveTitle3} from './typography.module.css'
 function WhoWeArePreview (props) {
   return (
     <Link
-    to={`/person/${props.slug.current}`}
-    style={{
-      textDecoration: 'none',
-      color: 'inherit',
-    }}
+      to={`/person/${props.slug.current}`}
+      style={{
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
     >
       <div className={styles.text}>
         <h1 className={styles.title}>{props.name}</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -80,6 +80,12 @@ const PaypalContainer = styled.div`
   text-align: center;
 `
 
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const PaypalButton = styled.div`
   display:inline-block;
   padding:0.35em 1.2em;
@@ -143,9 +149,12 @@ const IndexPage = (props) => {
           <Img fluid={site.heroImage.asset.fluid} />
         )}
       <Container>
+        <LinkContainer>
+          <Link to="/who-we-are" style={{textDecoration: 'none', fontSize: '24px', color: '#202123'}}>Click here to meet the team</Link>
+        </LinkContainer>
       <PaypalContainer>
         <PaypalButton>
-          <a href="https://www.paypal.com/paypalme/kwandc" target="_blank"><FaPaypal />Click here to contribute to KW&C via Paypal</a>
+          <a href="https://www.paypal.com/paypalme/kwandc" target="_blank" style={{color: '#202123'}}><FaPaypal />Click here to contribute to KW&C via Paypal</a>
         </PaypalButton>
       </PaypalContainer>
         {postNodes && (

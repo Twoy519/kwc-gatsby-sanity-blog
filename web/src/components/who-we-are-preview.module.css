@@ -28,7 +28,7 @@
 .text {
   /* empty */
   &:hover {
-    color: #74787f;
+    color: var(--color-gray);
   }
 }
 
@@ -58,6 +58,14 @@
 
   @nest & strong {
     font-weight: 600;
+  }
+}
+
+.wrapper {
+  @media (hover: hover) {
+    @nest & ul li a:hover {
+      color: var(--color-gray);
+    }
   }
 }
 
