@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './header'
-import {FiInstagram} from 'react-icons/fi'
+import {AiFillFacebook, AiFillInstagram} from 'react-icons/ai'
 
 import '../styles/layout.css'
 import styles from './layout.module.css'
@@ -12,7 +12,9 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
         <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Kenyan Women & Children <div style={{padding: "10px", color: "tomato"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><FiInstagram size={32}/></a></div>
+          &copy; {new Date().getFullYear()}, Kenyan Women & Children <div className={styles.footerLogoWrapper}>
+            <div style={{padding: "10px", color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><AiFillInstagram size={32}/></a></div><div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren'><AiFillFacebook size={24}/></a></div>
+          </div>
         </div>
       </div>
     </footer>

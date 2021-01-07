@@ -25,6 +25,17 @@
   }
 }
 
+.footerLogoWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @nest & a:hover {
+    text-decoration: none;
+    color: var(--color-gray);
+  }
+}
+
 .footerWrapper {
   box-sizing: border-box;
   max-width: 960px;

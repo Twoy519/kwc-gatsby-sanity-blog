@@ -2,7 +2,7 @@ import {Link} from 'gatsby'
 import React from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
-import {FiInstagram} from 'react-icons/fi'
+import {AiFillFacebook, AiFillInstagram} from 'react-icons/ai'
 
 import kwcLogo from "../images/kwc_logo.png"
 
@@ -25,10 +25,13 @@ const Header = ({onHideNav, onShowNav, showNav}) => (
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to='/who-we-are' style={{ padding: "0", fontSize: "24px"}} >Who We Are</Link>
+            <Link to='/who-we-are' style={{ padding: "0", marginRight: "10px", fontSize: "24px"}} >Who We Are</Link>
           </li>
           <li>
-          <div style={{color: "tomato"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><FiInstagram size={24}/></a></div>
+          <div style={{color: "#202123"}}><a href='https://www.instagram.com/kenyanwomenandchildren/'><AiFillInstagram size={24}/></a></div>
+          </li>
+          <li>
+          <div style={{color: "#202123"}}><a href='https://www.facebook.com/kenyanwomenandchildren'><AiFillFacebook size={24}/></a></div>
           </li>
         </ul>
       </nav>
