@@ -11,7 +11,7 @@ import GraphQLErrorList from '../components/graphql-error-list';
 import SEO from '../components/seo';
 import Layout from '../containers/layout';
 import Img from 'gatsby-image';
-import styled from 'styled-components';
+import styles from '../components/index.module.css'
 
 import {FaPaypal} from 'react-icons/fa'
 
@@ -76,48 +76,6 @@ export const query = graphql`
   }
 `;
 
-const PaypalContainer = styled.div`
-  text-align: center;
-`
-
-const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const PaypalButton = styled.div`
-  display:inline-block;
-  padding:0.35em 1.2em;
-  border: none;
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-size: 32px;
-  font-weight: 500;
-  color:#FFFFFF;
-  text-align:center;
-  transition: all 0.2s;
-
-  :hover{
-    color:#000000;
-    background-color:#FFFFFF;
-    a {
-      color: black
-    }
-  }
-
-  @media all and (max-width:30em){
-    display:block;
-    margin:0.4em auto;
-  }
-
-  a {
-    text-decoration: none;
-  }
-`
-
 const IndexPage = (props) => {
   const { data, errors } = props;
 
@@ -149,14 +107,14 @@ const IndexPage = (props) => {
           <Img fluid={site.heroImage.asset.fluid} />
         )}
       <Container>
-        <LinkContainer>
-          <Link to="/who-we-are" style={{textDecoration: 'none', fontSize: '24px', color: '#202123'}}>Click here to meet the team</Link>
-        </LinkContainer>
-      <PaypalContainer>
-        <PaypalButton>
-          <a href="https://www.paypal.com/paypalme/kwandc" target="_blank" style={{color: '#202123'}}><FaPaypal />Click here to contribute to KW&C via Paypal</a>
-        </PaypalButton>
-      </PaypalContainer>
+      <div className={styles.linkContainer}>
+        <Link to="/who-we-are">Click here to meet the team</Link>
+      </div>
+      <div className={styles.paypalContainer}>
+        <div className={styles.paypalButton}>
+          <a href="https://www.paypal.com/paypalme/kwandc" target="_blank"><FaPaypal />Click here to contribute to KW&C via Paypal</a>
+        </div>
+      </div>
         {postNodes && (
           <BlogPostPreviewList
             nodes={postNodes}
