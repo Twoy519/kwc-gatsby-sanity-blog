@@ -8,14 +8,14 @@ import kwcLogo from "../images/kwc_logo.png"
 
 import styles from './header.module.css'
 
-const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
+const Header = ({onHideNav, onShowNav, showNav}) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
         <Link to="/">
           <img src={kwcLogo} height="64" />
         </Link>
       <div className={styles.branding}>
-        <Link to='/'>{siteTitle}</Link>
+        <Link to='/'>Kenyan Women & Children</Link>
       </div>
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
