@@ -13,7 +13,7 @@ import Layout from '../containers/layout';
 import Img from 'gatsby-image';
 import styles from '../components/index.module.css'
 
-import {FaPaypal} from 'react-icons/fa'
+import { FaPaypal } from 'react-icons/fa'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -45,7 +45,7 @@ export const query = graphql`
       keywords
       heroImage {
         asset {
-          fluid(maxWidth: 1200) {
+          fluid {
             ...GatsbySanityImageFluid
           }
         }
@@ -90,8 +90,8 @@ const IndexPage = (props) => {
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
+      .filter(filterOutDocsWithoutSlugs)
+      .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   if (!site) {
@@ -103,25 +103,26 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-        {site.heroImage && (
-          <Img fluid={site.heroImage.asset.fluid} />
-        )}
+      {site.heroImage && (
+        <Container styles={{ margin: "0 auto", position: "relative", maxWidth: "400px" }}><Img fluid={site.heroImage.asset.fluid} /></Container>
+      )
+      }
       <Container>
-      <div className={styles.linkContainer}>
-        <Link to="/who-we-are">Click here to meet the team</Link>
-      </div>
-      <div className={styles.paypalContainer}>
-        <div className={styles.paypalButton}>
-          <a href="https://www.paypal.com/paypalme/kwandc" target="_blank"><FaPaypal />Click here to contribute to KW&C via Paypal</a>
+        <div className={styles.linkContainer}>
+          <Link to="/who-we-are">Click here to meet the team</Link>
         </div>
-      </div>
+        <div className={styles.paypalContainer}>
+          <div className={styles.paypalButton}>
+            <a href="https://www.paypal.com/paypalme/kwandc" target="_blank"><FaPaypal />Click here to contribute to KW&C via Paypal</a>
+          </div>
+        </div>
         {postNodes && (
           <BlogPostPreviewList
             nodes={postNodes}
           />
         )}
       </Container>
-    </Layout>
+    </Layout >
   );
 };
 
