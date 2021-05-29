@@ -104,7 +104,7 @@ const IndexPage = (props) => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       {site.heroImage && (
-        <Container styles={{ margin: "0 auto", position: "relative", maxWidth: "400px" }}><Img fluid={site.heroImage.asset.fluid} /></Container>
+        <div className={styles.heroImage}><Img fluid={site.heroImage.asset.fluid} /></div>
       )
       }
       <Container>
